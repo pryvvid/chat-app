@@ -1,0 +1,17 @@
+.username {
+  border: 1px solid #545e9b;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.message {
+  border: 1px solid #545e9b;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.submitButton {
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
