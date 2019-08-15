@@ -7,19 +7,25 @@ import './Posts.css';
 
 class Posts extends Component {
   componentDidMount() {
-    this.props.fetchPosts();
+    this.props.fetchPosts(this.props.ws);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.newPost) {
+    if (nextProps.newPost.length) {
+      console.log('Posts Next props', nextProps);
       this.props.posts.unshift(nextProps.newPost);
     }
   }
 
+  componentDidUpdate() {
+    console.log('Posts component updated');
+    this.props.fetchPosts(this.props.ws);
+  }
+
   render() {
     const { posts } = this.props;
-    console.log(posts);
-    console.log(posts.length);
+    // console.log(posts);
+    // console.log(posts.length);
     const postItems = posts.map(post => {
       const currentTime = post.time;
       const date = new Date();
@@ -32,10 +38,9 @@ class Posts extends Component {
         </div>
       )
     });
-    console.log();
     return (
       <div>
-        <h1>Chat</h1>
+        <h1 className="chatHeader">Chat</h1>
         {postItems}
       </div>
     );

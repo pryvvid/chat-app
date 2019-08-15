@@ -1,3 +1,7 @@
+.messageHeader {
+  font-family: sans-serif;
+}
+
 .username {
   border: 1px solid #545e9b;
   border-radius: 5px;
@@ -11,7 +15,7 @@
 }
 
 .submitButton {
-  border: none;
+  border: 1px solid #545e9b;
   border-radius: 5px;
   padding: 5px;
 }

@@ -1,4 +1,4 @@
-import { FETCH_POSTS, NEW_POST, CONNECT_TO_SERVER } from '../actions/types';
+import { FETCH_POSTS, NEW_POST, CLEAR_POSTS } from '../actions/types';
 
 const initialState = {
   items: [],
@@ -21,6 +21,12 @@ export default function(state = initialState, action) {
         items: [action.payload, ...state.items].flat(),
         item: action.payload
       }
+    case CLEAR_POSTS: {
+      return {
+        ...state,
+        items: []
+      }
+    }
     default:
       return state;
   }

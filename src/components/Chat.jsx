@@ -24,13 +24,14 @@ class Chat extends Component {
   render() {
     
     return (
-      <div>
       <Provider store={store}>
-        <PostForm />
-        <br />
-        <Posts />
+        <div>
+          <PostForm />
+          <br />
+          <Posts />
+        </div>
       </Provider>
-      </div>
+
     );
   }
 }
